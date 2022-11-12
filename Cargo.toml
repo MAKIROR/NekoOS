@@ -13,3 +13,6 @@ panic = "abort"
 
 [profile.release]
 panic = "abort"
+
+[package.metadata.bootimage]
+build-command = ["xbuild"]

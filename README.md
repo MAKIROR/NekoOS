@@ -1,1 +1,1 @@
-# NekoOS
+# Neko OS

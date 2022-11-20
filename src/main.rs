@@ -1,4 +1,3 @@
-#![feature(panic_handler)]
 #![feature(core_intrinsics)]
 #![feature(custom_test_frameworks)]
 #![test_runner(crate::test_runner)]

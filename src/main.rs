@@ -1,16 +1,13 @@
-#![feature(core_intrinsics)]
+#![no_std]
+#![no_main]
 #![feature(custom_test_frameworks)]
 #![test_runner(crate::test_runner)]
 #![reexport_test_harness_main = "test_main"]
 
-#![no_std]
-#![no_main]
-
-extern crate bootloader;
+use core::panic::PanicInfo;
 
 #[path = "mods/vga_buffer.rs"]
 mod vga_buffer;
-use core::panic::PanicInfo;
 
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {

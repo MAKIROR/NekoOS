@@ -4,10 +4,11 @@
 #![test_runner(crate::test_runner)]
 #![reexport_test_harness_main = "test_main"]
 
-use core::panic::PanicInfo;
+extern crate bootloader;
 
 #[path = "mods/vga_buffer.rs"]
 mod vga_buffer;
+use core::panic::PanicInfo;
 
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {

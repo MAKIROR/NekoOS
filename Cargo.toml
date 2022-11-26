@@ -11,6 +11,7 @@ x86_64 = "0.14.2"
 bootloader = "0.9.3"
 volatile = "0.2.6"
 spin = "0.9.4"
+pic8259 = "0.10.1"
 
 [package.metadata.bootimage]
 test-args = [
@@ -25,5 +26,5 @@ version = "1.0"
 features = ["spin_no_std"]
 
 [[test]]
-name = "should_panic"
+name = "stack_overflow"
 harness = false

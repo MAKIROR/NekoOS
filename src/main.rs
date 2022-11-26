@@ -13,28 +13,16 @@ pub extern "C" fn _start() -> ! {
 
     neko_os::init();
 
-    fn stack_overflow() {
-        stack_overflow();
-    }
-
-    stack_overflow();
-
     #[cfg(test)]
     test_main();
 
     println!("It did not crash!");
-    loop {}
+    neko_os::hlt_loop();
 }
 
 #[cfg(not(test))]
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
     println!("{}", info);
-    loop {}
-}
-
-#[cfg(test)]
-#[panic_handler]
-fn panic(info: &PanicInfo) -> ! {
-    neko_os::test_panic_handler(info)
+    neko_os::hlt_loop();
 }

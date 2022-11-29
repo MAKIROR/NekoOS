@@ -6,11 +6,10 @@
 
 extern crate alloc;
 
-use core::panic::PanicInfo;
+use alloc::{boxed::Box, rc::Rc, vec, vec::Vec};
 use neko_os::println;
-use bootloader::{BootInfo, entry_point};
-use x86_64::structures::paging::PageTable;
-use alloc::{boxed::Box, vec, vec::Vec, rc::Rc};
+use bootloader::{entry_point, BootInfo};
+use core::panic::PanicInfo;
 
 entry_point!(kernel_main);
 
